@@ -1,0 +1,26 @@
+/*
+    Import your css here, make sure to add the css to it's correct directory
+    Styles for pages are added in the page folder and components are added on the components folder.
+    When naming make sure that it's the same name as the component that it's going to style, 
+    dont forget to add an underscore before the name.
+*/
+@import "./components/_sidebar.css";
+
+body {
+  padding: 0;
+  margin: 0;
+
+  width: 100%;
+  height: 100%;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}

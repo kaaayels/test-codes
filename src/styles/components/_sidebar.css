@@ -1,0 +1,19 @@
+/* 
+Sidebar styling goes here
+*/
+
+.sidebar {
+  height: max-content;
+  background-color: #103955;
+  height: 100vh;
+}
+
+.sidebar .links {
+  padding: 10px;
+}
+
+.sidebar .links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+}
