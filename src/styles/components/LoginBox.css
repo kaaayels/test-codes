@@ -1,0 +1,38 @@
+.login-box {
+  background-color: #103955;
+  border: 1px solid #103955;
+  padding: 20px;
+}
+
+.login-box label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login-box button {
+  background-color:white;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background-color: #0062cc;
+}
+
+.email {
+    color: white;
+}

@@ -6,7 +6,7 @@ import { HomePage } from "./pages/HomePage";
 import { LeaderboardsPage } from "./pages/LeaderboardsPage";
 import { StandingsPage } from "./pages/StandingsPage";
 import "./styles/styles.css";
-
+ 
 function App() {
   return (
     <div className="main">
