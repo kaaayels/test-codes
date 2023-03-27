@@ -1,16 +1,15 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React from "react";
 import bulogo from '../styles/bulogo.png';
 import { BsCalendar3Event } from 'react-icons/bs';
 import { ImListNumbered } from 'react-icons/im';
 import { FaMedal } from 'react-icons/fa';
-import { AiOutlineHome } from 'react-icons/ai';
-import { RiLoginBoxLine } from 'react-icons/ri';
+import { BsPersonCircle } from 'react-icons/bs';
 
 
 export function Sidebar() {
   return (
-    <div className="sidebar">
+    <div className="sidebar"> 
       <div className="sidebar-logo">
         <img src={bulogo} alt="bulogo" />
       </div>
@@ -22,38 +21,35 @@ export function Sidebar() {
       <div className="title2">Event Monitoring System</div>
 
       <div className="Nav">
-        <div className="links" activeClassName="active-link">
-          <Link to="/">
-            <AiOutlineHome />
-            Home</Link>
-        </div>
-
-        <div className="links" activeClassName="active-link">
-          <Link to="/events-page">
+ 
+          <NavLink to="/" className="links" activeclassname="active-link">
             <BsCalendar3Event />
-            Events</Link>
-        </div>
+            Events
+            </NavLink>
 
-        <div className="links" activeClassName="active-link">
-          <Link to="/standings-page">
+
+       
+          <NavLink to="/standings-page" className="links" activeclassname="active-link">
             <ImListNumbered />
-            Standings</Link>
-        </div>
+            Standings
+            </NavLink>
+     
 
-        <div className="links" activeClassName="active-link">
-          <Link to="/leaderboards-page">
+   
+          <NavLink to="/leaderboards-page" className="links" activeclassname="active-link">
             <FaMedal />
-            Leaderboards</Link>
+            Leaderboards
+            </NavLink>
+ 
         </div>
-
-        <div class="login-box">
+        <div className="login-box">
         <div className="login">
-          <Link to="/login">
-            <RiLoginBoxLine/>
+          <NavLink to="/login-page">
+            <BsPersonCircle/>
             Login | Admin
-          </Link>
+          </NavLink>
 
-        </div>
+    
       </div>
       </div>
 
