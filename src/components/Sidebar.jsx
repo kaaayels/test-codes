@@ -43,14 +43,14 @@ export function Sidebar() {
  
         </div>
         <div className="login-box">
-        <div className="login">
+          <ul className="login">
+            <li>
           <NavLink to="/login-page">
             <BsPersonCircle/>
             Login | Admin
           </NavLink>
-
-    
-      </div>
+          </li>
+          </ul>
       </div>
 
     </div>

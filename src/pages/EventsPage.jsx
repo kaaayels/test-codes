@@ -18,18 +18,7 @@ export function EventsPage() {
         </div>
       </h2>
       <Dropdown />
-      <div className="mens">
-      <h2>
-        Mens
-        </h2>
-        </div>
       <Schedule/>
-      <div className="womens">
-      <h2>
-        Womens
-        </h2>
-        </div>
-        <Schedule2/>
     </div>
     </div>
   );
@@ -114,9 +103,10 @@ function Schedule() {
         <tr>
           <th>Home Team &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
           <th>Away Team &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-          <th>Date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-          <th>Time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-          <th>Location&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+          <th>Date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+          <th>Time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+          <th>Location &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+          <th>Division &nbsp; &nbsp;</th>
         </tr>
       </thead>
       <tbody>
@@ -127,6 +117,7 @@ function Schedule() {
             <td>{game.date}</td>
             <td>{game.time}</td>
             <td>{game.location}</td>
+            <td>{game.division}</td>
           </tr>
         ))}
       </tbody>
@@ -143,6 +134,7 @@ const games = [
     date: 'mm/dd/yy',
     time: 'hh:mm',
     location: 'Bicol University',
+    division: 'Mens',
   },
   {
     id: 2,
@@ -151,24 +143,8 @@ const games = [
     date: 'mm/dd/yy',
     time: 'hh:mm',
     location: 'Bicol University',
-  },
-  {
-    id: 3,
-    homeTeam: 'Team 5',
-    awayTeam: 'Team 6',
-    date: 'mm/dd/yy',
-    time: 'hh:mm',
-    location: 'Bicol University',
-  },
-  {
-    id: 4,
-    homeTeam: 'Team 7',
-    awayTeam: 'Team 8',
-    date: 'mm/dd/yy',
-    time: 'hh:mm',
-    location: 'Bicol University',
-  },
-  // more games...
+    division: 'Women',
+  }
 ];
 
 // function to add a new game to the array
@@ -183,24 +159,26 @@ function GameForm() {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [location, setLocation] = useState('');
+  const [division, setDivision] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
     const id = games.length + 1;
-    const game = { id, homeTeam, awayTeam, date, time, location };
+    const game = { id, homeTeam, awayTeam, date, time, location, division };
     addGame(game);
     setHomeTeam('');
     setAwayTeam('');
     setDate('');
     setTime('');
     setLocation('');
+    setDivision('');
     toast.success('Game added successfully!', {
       position: toast.POSITION.TOP_RIGHT,
       
 
-      closeOnClick: true, // Close the notification when clicked
-      pauseOnHover: true, // Pause the timer when hovered
-      draggable: true, // Allow to drag the notification
+      closeOnClick: true, 
+      pauseOnHover: true, 
+      draggable: true, 
     });
 
   }
@@ -253,6 +231,15 @@ function GameForm() {
         />
       </label>
       <br />
+      <label>
+        Division:
+        <input
+          type="text"
+          value={division}
+          onChange={(event) => setDivision(event.target.value)}
+        />
+      </label>
+      <br />
       <button className='addgame' type="submit">Add Game</button>
     </form>
     </div>
@@ -261,7 +248,7 @@ function GameForm() {
 export default GameForm
 
 
-/*        womens schedule       */
+/*        womens schedule       
 
 
 function Schedule2() {
@@ -406,4 +393,5 @@ export function GameForm2() {
   );
 }
 
+*/
 
